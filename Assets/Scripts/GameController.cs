@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    #region veriables
-    // ERDEM
     [SerializeField]
     private Sprite bgImage;
 
@@ -26,7 +24,6 @@ public class GameController : MonoBehaviour
     private int firstGuessIndex, secondGuessIndex;
 
     private string firstGuessPuzzle, secondGuessPuzzle;
-    #endregion
     void Start()
     {
         GetButtons();
@@ -139,23 +136,12 @@ public class GameController : MonoBehaviour
             NextScene();
         }
     }
-    #region SCENE MANAGER
-    public void toGameScene()
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void quitGame()
-    {
-        Application.Quit();
-    }
+    public void toGameScene() => SceneManager.LoadScene(1);
+    public void quitGame() => Application.Quit();
+    public void toMenu() => SceneManager.LoadScene(0);
     public void NextScene()
     {
         int presentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(presentScene + 1);
     }
-    public void toMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-    #endregion
 }

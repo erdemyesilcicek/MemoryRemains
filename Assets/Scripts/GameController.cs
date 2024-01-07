@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     #region veriables
+    // ERDEM
     [SerializeField]
     private Sprite bgImage;
 
